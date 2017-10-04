@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User-Signup</title>
+    <style>
+        body {
+            background-color: #444444;
+        }
+        form {
+                background-color: #000000;
+                color: #cccccc;
+                padding: 20px;
+                margin: 0 auto;
+                width: 540px;
+                font: 16px sans-serif;
+                border-radius: 15px;
+                border: 3px #888888 outset;
+        }
+        h1 {
+            text-align: center;
+            margin: auto;
+            color: #aaaaaa
+        }
+        .error {
+            color: purple;
+        }
+    </style>
+</head>
+
+<body>
+<h1>Sign-up</h1>
+<br><br>
+<form method="POST">
+    <label for="username">Username:</label><br>
+    <input type="text" name="username" value="{{uname}}">
+    <span class="error">{{unameerror}}</span><br>
+    <label for="password">Password:</label><br>
+    <input type="password" name="password">
+    <span class="error">{{passerror}}</span><br>
+    <label for="confirm">Confirm Password:</label><br>
+    <input type="password" name="confirm">
+    <span class="error">{{confirmerror}}</span><br>
+    <label for="email">Email (Optional):</label><br>
+    <input type="text" name="email" value="{{mail}}">
+    <span class="error">{{emailerror}}</span><br>
+    <input type="submit">
+</form>
+
+</body>
+
+</html>
