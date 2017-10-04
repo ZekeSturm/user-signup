@@ -16,10 +16,10 @@ jinja_env = jinja2.Environment(
 @app.route('/', methods=['POST'])
 def check():
     template = jinja_env.get_template('user-signup.html')
-    username = str(request.args.get("username"))
-    password = str(request.args.get("password"))
-    confirm = str(request.args.get("confirm"))
-    email = str(request.args.get("email"))
+    username = request.form.get("username")
+    password = request.form.get("password")
+    confirm = request.form.get("confirm")
+    email = request.form.get("email")
     
     checkvals = checker(username,password,confirm,email)
 
@@ -35,7 +35,7 @@ def check():
         return template.render(uname = uname,unameerror = unameerror,passerror = passerror,confirmerror = confirmerror,mail = mail,emailerror = emailerror)
     else:
         template = jinja_env.get_template('welcome.html')
-        return template.render(username)
+        return template.render(username = username)
 
 @app.route("/")
 def index():
